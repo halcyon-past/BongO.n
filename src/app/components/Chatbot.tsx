@@ -86,7 +86,7 @@ const Chatbot: React.FC = () => {
           <div className="bg-gradient-to-r from-red-500 to-red-600 p-4">
             <h1 className="text-white text-lg font-bold text-center">Welcome to PAW-sitive</h1>
           </div>
-          <div className="p-4 h-64 overflow-y-auto">
+          <div className="p-4 h-full overflow-y-auto">
             {messages.map((msg, index) => (
               <div
                 key={index}
@@ -113,14 +113,14 @@ const Chatbot: React.FC = () => {
             )}
             <div ref={chatEndRef} />
           </div>
-          <div className="p-2 border-t border-gray-200 flex items-center absolute bottom-1 w-full">
+          <div className="px-2 border-t border-gray-200 flex items-center absolute bottom-1 w-full">
             <input
               type="text"
               placeholder="Type your message..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-              className="flex-grow border border-gray-300 rounded-full px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 text-black"
+              className="flex-grow border border-gray-300 rounded-full px-3 focus:outline-none focus:ring-2 focus:ring-red-500 text-black"
             />
             <button
               onClick={handleSendMessage}
